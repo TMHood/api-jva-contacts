@@ -3,8 +3,8 @@ package com.esure.apijvacontacts.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "contacts")
@@ -13,20 +13,20 @@ import javax.validation.constraints.NotNull;
 @ToString(callSuper = true)
 @EqualsAndHashCode()
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
-public class Contacts {
-    private static final long MAX_NAME_LENGTH = 30;
-    private static final long MAX_PHONE_LENGTH = 20;
+public class Contact {
+    private static final int MAX_NAME_LENGTH = 30;
+    private static final int MAX_PHONE_LENGTH = 20;
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id",insertable = false)
+    @Column(insertable = false)
     @Id
     private Long id;
 
-    @Max(MAX_NAME_LENGTH)
+    @Size(max = MAX_NAME_LENGTH)
     @NotNull
     private String name;
 
-    @Max(MAX_PHONE_LENGTH)
+    @Size(max = MAX_PHONE_LENGTH)
     @NotNull
     private String phone;
 }
