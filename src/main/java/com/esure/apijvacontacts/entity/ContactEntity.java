@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 @ToString(callSuper = true)
 @EqualsAndHashCode()
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
-public class Contact {
+public class ContactEntity {
     private static final int MAX_NAME_LENGTH = 30;
     private static final int MAX_PHONE_LENGTH = 20;
 
